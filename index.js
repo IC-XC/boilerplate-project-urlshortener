@@ -2,6 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+let mongoose = require('mongoose');
+const bodyParser = require("body-parser");
+const { Schema } = mongoose;
+const dns = require("dns");
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
@@ -38,6 +42,7 @@ app.post('/api/shorturl', function(req, res) {
     }
   })
 })
+
 app.get("/api/shorturl/:id", async (req, res) => {
   let id = req.params.id
   let url = await urlModel.findOne({ short_url: id })
