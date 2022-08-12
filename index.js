@@ -9,7 +9,7 @@ const dns = require("dns");
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
-let uri = 'mongodb+srv://Per:Hunedoara@cluster0.4ch8y.mongodb.net/db-fcc?retryWrites=true&w=majority';
+let uri = 'mongodb+srv://Per:<password>@cluster0.4ch8y.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded());
 app.use(cors());
